@@ -14,6 +14,20 @@ h2{
     gap: 20px;
     justify-content: center;
     align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 600px){
+    
+    .board{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .day{
+        width: 90%;
+    }
+
 }
 
 .day{
