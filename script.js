@@ -49,4 +49,4 @@ function loadTasks(){
     }
 }
 
-window.onload = loadTasks
+document.addEventListener("DOMContentLoaded", loadTasks)
