@@ -17,10 +17,12 @@ function addTask(button){
 
     input.value = ""
 
+    saveTasks()
 }
 
 function removeTask(button){
     button.parentElement.remove()
+    saveTasks()
 }
 
 document.querySelectorAll(".day input").forEach(input => {
@@ -31,4 +33,20 @@ document.querySelectorAll(".day input").forEach(input => {
             addTask(button)
         }
     })
+
 })
+
+function saveTasks(){
+    const board = document.querySelector(".board").innerHTML
+    localStorage.setItem("tasks", board)
+}
+
+function loadTasks(){
+    const saved = localStorage.getItem("tasks")
+
+    if(saved){
+        document.querySelector(".board").innerHTML = saved
+    }
+}
+
+window.onload = loadTasks
